@@ -520,5 +520,241 @@ body.loaded .about-image img {
     50% { opacity: 0; }
 }
 
-/* ... (viennent ensuite les règles @media si elles sont à la fin) ... */
+/* ========================================
+   ALERTES DU FORMULAIRE DE CONTACT
+   À ajouter à la fin de votre style.css
+   ======================================== */
+
+.form-alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-alert.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-alert.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    padding: 5px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.alert-close:hover {
+    opacity: 1;
+}
+
+/* ========================================
+   VALIDATION EMAIL EN TEMPS RÉEL
+   ======================================== */
+
+/* Champ email valide */
+input#email.valid {
+    border-color: #28a745 !important;
+    background-color: #f0f9f4;
+}
+
+/* Champ email invalide */
+input#email.invalid {
+    border-color: #dc3545 !important;
+    background-color: #fff5f5;
+}
+
+/* Message d'erreur email */
+.email-error {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: slideInError 0.3s ease;
+}
+
+@keyframes slideInError {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.email-error i {
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   BOUTON DE SOUMISSION - ÉTATS DE CHARGEMENT
+   ======================================== */
+
+.cta-button:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    pointer-events: none;
+}
+
+#contact-form .cta-button:disabled {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #fff !important;
+}
+
+.cta-button .fa-spinner {
+    animation: spinner-rotation 1s linear infinite;
+}
+
+@keyframes spinner-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   VALIDATION VISUELLE DES CHAMPS (GÉNÉRAL)
+   ======================================== */
+
+input:not(#email).valid,
+textarea.valid {
+    border-color: #28a745;
+    background-color: #f0f9f4;
+}
+
+input:not(#email).invalid,
+textarea.invalid {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Alertes responsive */
+    .form-alert {
+        font-size: 14px;
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .alert-close {
+        align-self: flex-end;
+        margin: 0;
+        margin-top: -5px;
+    }
+    
+    .form-alert span {
+        flex: 1;
+        width: 100%;
+    }
+    
+    /* Message d'erreur email responsive */
+    .email-error {
+        font-size: 0.8rem;
+    }
+    
+    /* Map Google responsive */
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    /* Contact container responsive */
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .contact-info, .contact-form-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Très petits écrans */
+    .form-alert {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+    
+    .email-error {
+        font-size: 0.75rem;
+    }
+    
+    /* Formulaire plus compact */
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 16px; /* Évite le zoom automatique sur iOS */
+    }
+    
+    /* Bouton pleine largeur */
+    .cta-button {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        font-size: 16px;
+    }
+    
+    /* Map plus petite sur mobile */
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+/* ========================================
+   TABLETTES
+   ======================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-container {
+        gap: 2.5rem;
+    }
+    
+    .form-alert {
+        font-size: 14px;
+    }
+}
+
 }

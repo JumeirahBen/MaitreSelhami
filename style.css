@@ -288,8 +288,14 @@ body.loaded .about-image img {
 }
 
 .expertise-card p {
-    text-align: justify;
+    text-align: left;
     margin-bottom: 1.5rem;
+    line-height: 2;
+    font-size: 1rem;
+    word-spacing: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .expertise-card:hover {
@@ -327,22 +333,38 @@ body.loaded .about-image img {
 }
 
 /* FEES SECTION */
-.text-center { text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+.text-center { 
+    text-align: center; 
+    margin-bottom: 1.5rem; 
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 .fees-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
+
 .fee-option {
     background: var(--white-color);
     padding: 2rem;
     border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
 .fee-option h4 {
     font-family: var(--font-title);
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.fee-option p {
+    font-size: 0.95rem;
+    line-height: 1.8;
 }
 
 /* BLOG SECTION */

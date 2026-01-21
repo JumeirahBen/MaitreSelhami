@@ -380,7 +380,12 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', () => {
     const typedTextSpan = document.querySelector(".typing-text");
     
-    if (!typedTextSpan) return;
+    if (!typedTextSpan) {
+        console.warn('Élément .typing-text non trouvé');
+        return;
+    }
+    
+    console.log('Script typing initialized');
     
     const textArray = [
         "Défendre vos droits, bâtir votre stratégie.",
@@ -396,6 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function type() {
         if (charIndex < textArray[textArrayIndex].length) {
+            if (charIndex === 0) {
+                typedTextSpan.textContent = '';
+            }
             typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
             charIndex++;
             setTimeout(type, typingDelay);
@@ -416,5 +424,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
+    // Démarrer l'animation avec un délai léger pour s'assurer que le DOM est prêt
+    if (textArray.length) {
+        setTimeout(() => {
+            type();
+        }, 500);
+    }
 });

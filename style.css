@@ -679,6 +679,56 @@ textarea.invalid {
    ======================================== */
 
 @media (max-width: 768px) {
+    /* Aération du texte sur mobile */
+    body {
+        line-height: 2;
+    }
+    
+    .section-title { font-size: 2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+
+    /* Paragraphes plus aérés */
+    p {
+        margin-bottom: 1.8rem;
+        word-spacing: 0.1em;
+    }
+    
+    /* Augmentation espaces entre sections */
+    section {
+        padding: 4rem 1rem;
+    }
+    
+    .about-container, .contact-container {
+        flex-direction: column;
+    }
+    
+    /* About text spacing */
+    .about-text p {
+        margin-bottom: 1.8rem;
+        font-size: 1rem;
+    }
+    
+    /* Expertise cards mobile */
+    .expertise-card {
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .expertise-card p {
+        margin-bottom: 1.8rem;
+        font-size: 0.95rem;
+        line-height: 2;
+    }
+    
+    .expertise-card ul {
+        margin-bottom: 1rem;
+    }
+    
+    .expertise-card ul li {
+        margin-bottom: 0.8rem;
+    }
+    
     /* Alertes responsive */
     .form-alert {
         font-size: 14px;
@@ -722,6 +772,18 @@ textarea.invalid {
 
 @media (max-width: 480px) {
     /* Très petits écrans */
+    
+    /* Aération maximale pour petit écran */
+    body {
+        line-height: 2.1;
+    }
+    
+    p {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        word-spacing: 0.15em;
+    }
+    
     .form-alert {
         font-size: 13px;
         padding: 10px 12px;
@@ -733,7 +795,7 @@ textarea.invalid {
     
     /* Formulaire plus compact */
     .form-group {
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.5rem;
     }
     
     .form-group input,
@@ -747,6 +809,21 @@ textarea.invalid {
         width: 100%;
         padding: 0.9rem 1rem;
         font-size: 16px;
+    }
+    
+    /* Titres aérés */
+    h2, h3, h4 {
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    /* Listes aérées */
+    ul, ol {
+        margin-bottom: 1.8rem;
+    }
+    
+    li {
+        margin-bottom: 1rem;
     }
     
     /* Map plus petite sur mobile */
